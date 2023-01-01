@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Flexbox</title>
+        <meta name="viewport" content="widht=device-widht, initial-scale=1.0">
+
+    </head>
+    <body>
+    <div class="flexbox">
+    <div class="row">
+        <div class="flexbox-01-01"></div>
+        <div class="flexbox-01-02"></div>
+
+        <div class="row">
+            <div class="flexbox__one"></div>
+            <div class="flexbox__two">
+                <div class="two__one"></div>
+                <div class="two__two"></div>
+               
+            </div>
+            
+                    
+
+            <div class="row">
+                <div class="flexbox-03-01"></div>
+                <div class="flexbox-03-02"></div>
+                <div class="flexbox-03-03"></div>
+
+            </body>
+            </html>
+
+                <style>
+                body{
+                    margin: 0;
+                    padding: 0;
+                    height: 100vh;
+                    background-color: rgb(138, 138, 157);
+                    
+                }
+                
+                .flexbox {
+                    margin: 20px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    
+                 
+                    
+                    
+                }
+                
+                .row {
+                    width: 900px;
+                    height: 800px;
+                    margin: auto;
+                    display: flex;
+                    justify-content:space-between;
+                    flex-wrap: wrap;
+                    
+                }
+               
+                .flexbox-01-01 {
+                    background-color: rgb(203, 75, 5);
+                    box-shadow: 0 0px 30px 5px rgb(26, 38, 28);
+    position: relative;
+    flex:5;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 5px;
+    
+     
+    }
+    .flexbox-01-01:hover{
+        background-color: rgb(255, 0, 0);
+        transition: 0.3s;
+    }
+
+
+    .flexbox-01-02 {
+        background-color: rgb(203, 75, 5);
+    box-shadow: 0 0px 30px 5px rgb(26, 38, 28);
+    position: relative;
+    flex:2;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 5px;
+    }
+
+
+    .flexbox-01-02:hover{
+        background-color: rgb(255, 0, 0);
+        transition: 0.3s;
+    }
+
+    
+    .flexbox__one {
+        background-color: rgb(191, 173, 13);
+        box-shadow: 0 0px 30px 5px rgb(26, 38, 28);
+    position: relative;
+    flex:1;
+    width: 300px;
+    
+    margin: 10px;
+    border-radius: 5px;
+    }
+
+    .flexbox__one:hover{
+        background-color: rgb(251, 255, 0);
+        transition: 0.3s;
+    }
+
+
+    .flexbox__two {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 2;
+        gap: 12px;
+        
+    }
+
+    .two__one {
+        background-color: rgb(134, 6, 102);
+        box-shadow: 0 0px 30px 5px rgb(26, 38, 28);
+    position: relative;
+    flex-grow: 2;
+    width: 500px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 5px;}
+
+    .two__one:hover{
+        background-color: rgb(221, 0, 255);
+        transition: 0.3s;
+    }
+
+
+    .two__two {
+        background-color: rgb(134, 6, 102);
+        box-shadow: 0 0px 30px 5px rgb(26, 38, 28);
+    position: relative;
+    flex-grow: 2;
+    width: 500px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 5px;}
+
+    .two__two:hover{
+        background-color: rgb(221, 0, 255);
+        transition: 0.3s;
+    }
+
+
+    .flexbox-03-01 {
+    background-color: rgb(6, 77, 176);
+    box-shadow: 0 0px 30px 5px rgb(26, 38, 28);
+    position: relative;
+    flex:1;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 5px;
+     
+    }
+    .flexbox-03-01:hover {
+        background-color: rgb(0, 110, 255);
+        transition: 0.3s;
+    }
+
+    .flexbox-03-02 {
+    background-color: rgb(6, 77, 176);
+    box-shadow: 0 0px 30px 5px rgb(26, 38, 28);
+    position: relative;
+    flex:2;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 5px;
+     
+    }
+
+    .flexbox-03-02:hover {
+        background-color: rgb(0, 110, 255);
+        transition: 0.3s;
+    }
+
+    .flexbox-03-03 {
+    background-color: rgb(6, 77, 176);
+    box-shadow: 0 0px 30px 5px rgb(26, 38, 28);
+    position: relative;
+    flex:1;
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 5px;
+     
+    }
+
+    .flexbox-03-03:hover {
+        background-color: rgb(0, 110, 255);
+        transition: 0.3s;
+    }
+
+      </style>
+
+             
+                
