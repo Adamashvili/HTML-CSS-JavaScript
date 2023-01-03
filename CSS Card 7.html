@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="widht=device-widht, initial-scale=1.0">
+<title>Animated Cards</title>
+</head>
+<body>
+     <div class="container">
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/ca/f7/bf/caf7bfec91fc1a28dcf4d087f7ab1627.jpg" alt="">
+            <div class="intro">
+                <h1>W124 E500</h1>
+                <p>The <span>Mercedes-Benz 500 E</span>  (W124.036) is a high-performance version of the W124 sold by Mercedes-Benz from 1990 to 1995. The 500 E was created in close cooperation with Porsche. </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/originals/18/69/76/18697668f149c0276ba44779b327b107.jpg" alt="">
+            <div class="intro">
+                <h1>W210 E55 AMG</h1>
+                <p>The W210 was designed by Steve Mattin under design chief <span>Bruno Sacco</span>  between 1988 and 1991 later being previewed on the 1993 Coupé Concept shown at the Geneva Auto Show in March 1993.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="http://sun9-28.userapi.com/impg/QBJ5kvSY4weYlU3dd3i2oWmlH7aGodDN0kO4jQ/nW2H5cDoMSQ.jpg?size=604x604&quality=96&sign=05efd0652b509ff76db975e9fa35b63b&type=album" alt="">
+            <div class="intro">
+                <h1>W211 E63 AMG</h1>
+                <p>the E 63 AMG had the AMG-tuned <span></span> Airmatic suspension which with the stability control turned off gave it far better driving dynamics than its non-AMG predecessors.</p>
+            </div>
+        </div>
+     </div>
+    </body>
+    </html>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            align-items: center;
+            background: rgb(106, 103, 103);
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            position: relative;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 4rem
+            ;
+        }
+
+        .card {
+            height: 500px;
+            margin: 50px;
+            box-shadow: 5px 5px 20px black;
+            overflow: hidden;
+        }
+
+        img {
+            height: 500px;
+            width: 350px;
+            border-radius: 3px;
+            transition: .5s;
+
+            
+        }
+
+        .intro {
+            height: 70px;
+            width: 350px;
+            padding: 6px;
+            box-sizing: border-box;
+            position: relative;
+            background: rgb(27, 27, 27, 0.5);
+            color: white;
+            bottom: 75px;
+            transition: .5s;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 15px;
+            margin: 20px;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        .card:hover {
+            cursor: pointer;
+           
+        }
+
+        .card:hover .intro {
+            height: 220px;
+            bottom: 14rem;
+            background: black;
+            opacity: 0.8;
+        }
+
+        .card:hover p{
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .card:hover img {
+            transform: scale(1.1) rotate(-3deg);
+        }
+     </style>
+
