@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <div class="container">
+            <div class="header">"If you want to achieve greatness stop asking for permission." --Anonymous</div>
+        </div>
+        <div class="container">
+            <div class="header">"Things work out best for those who make the best of how things work out." --John Wooden</div>
+        </div>
+        <div class="container">
+            <div class="header">"If you are not willing to risk the usual you will have to settle for the ordinary." --Jim Rohn</div>
+        </div>
+        <div class="container">
+            <div class="header">"To accomplish great things, we must not only act, but also dream, not only plan, but also believe." --Anatole France</div>
+        </div>
+        <div class="container">
+            <div class="header">"Good things come to people who wait, but better things come to those who go out and get them." --Anonymous</div>
+        </div>
+        <div class="container">
+            <div class="header">"If you do what you always did, you will get what you always got." --Anonymous</div>
+        </div>
+        <div class="container">
+            <div class="header">"Success is walking from failure to failure with no loss of enthusiasm." --Winston Churchill</div>
+        </div>
+        <div class="container">
+            <div class="header">"Whenever you see a successful person you only see the public glories, never the private sacrifices to reach them." --Vaibhav Shah</div>
+        </div>
+        <div class="container">
+            <div class="header">"Opportunities don't happen, you create them." --Chris Grosser</div>
+        </div>
+        <div class="container">
+            <div class="header">Try not to become a person of success, but rather try to become a person of value." --Albert Einstein</div>
+        </div>
+        <div class="container">
+            <div class="header">Great minds discuss ideas; average minds discuss events; small minds discuss people." --Eleanor Roosevelt</div>
+        </div>
+        <div class="container">
+            <div class="header">"I have not failed. I've just found 10,000 ways that won't work." --Thomas A. Edison
+            </div>
+        </div>
+        <div class="container">
+            <div class="header">"If you don't value your time, neither will others. Stop giving away your time and talents--start charging for it." --Kim Garst</div>
+        </div>
+    
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+           *{
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+               font-family: 'Poppins';
+               font-weight: bold;
+           }
+       
+           body {
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+               margin: 0;
+               overflow-x: hidden;
+               background: black;
+           }
+       
+           
+       
+           .container{
+               width: 350px;
+               height: 250px;
+               background: rgb(255, 255, 255);
+               border-radius: 10px;
+               box-shadow: 0px 0px 25px 8px rgb(101, 210, 232);
+               margin: 30px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               transform: translateX(400%);
+               transition:  0.4s all ease;
+           }
+       
+           .container:nth-of-type(even) {
+               transform: translateX(-400%);
+           }
+       
+           .container.show {
+               transform: translateX(0%);
+           }
+       
+         
+           .header {
+               padding: 25px;
+           }
+       </style>
+       
+        <script>
+            const container = document.querySelectorAll(".container");
+            window.addEventListener("scroll", scrollContainer);
+            
+            scrollContainer ()
+        
+            function scrollContainer () {
+                const boxDown = window.innerHeight / 5 * 4;
+                container.forEach((box) => {
+                    var boxTop = box.getBoundingClientRect().top ;
+                    if (boxTop < boxDown) {
+                        box.classList.add('show')
+                    }
+                    else {
+                        box.classList.remove('show')
+                    }
+                    
+                })
+            }
+        </script>
+</body>
+
+
+
+
+
+</html>
