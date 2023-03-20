@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Onchange - Fetch API</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container-items">
+            <select name="select" id="select" onchange="onChange(event)">
+                <option value="">Choose From 0 to 10</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+
+            <div class="info">
+                <div class="infos">
+                <div class="infoId"></div> 
+                <div class="infoDesc"></div> 
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        var info = document.querySelector(".info");
+        var infos = document.querySelector(".infos");
+        var infoId = document.querySelector(".infoId");
+        var infoDesc = document.querySelector(".infoDesc");
+        var select = document.getElementById("select");
+        var responseData = [];
+
+       
+
+        function createInfo (txt1, txt2) {
+            var elem = document.createElement("div");
+            elem.classList.add("infos");
+            var x = createElementInfoId(txt1);
+            var y = createElementInfoDesc(txt2);
+            elem.appendChild(x);
+            elem.appendChild(y);
+            return elem;
+        }
+
+        function createElementInfoId(txt) {
+            var elem = document.createElement("div");
+            var text = document.createTextNode(txt);
+            elem.innerHTML = text.nodeValue;
+            elem.classList.add("infoId");
+            return elem;
+
+        }
+
+        function createElementInfoDesc(txt) {
+            var elem = document.createElement("div");
+            var text = document.createTextNode(txt);
+            elem.innerHTML = text.nodeValue;
+            elem.classList.add("infoDesc");
+            return elem;
+        }
+
+        var responseData = "";
+        async function getPosts() {
+            var data = await fetch("https://jsonplaceholder.typicode.com/posts");
+            return data.json();
+        }
+
+        function onChange(e) {
+            getPosts().then((data) => {
+                var sliceData;
+           let firstValue = e.target.value - 1;
+                sliceData = data.slice(firstValue, e.target.value)
+            infos.innerHTML = "";
+                sliceData.forEach((item) => {
+                   infos.appendChild(createInfo(item.id, item.body))
+                  
+                })
+
+            })
+        } 
+
+
+
+    </script>
+
+    <style>
+         @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            display: flex;
+            place-content: center;
+            font-family: 'Poppins', sans-serif;
+            background-color: black;
+        }
+
+        .container {
+            position: relative;
+            top: 30px;
+            width: 350px;
+            height: 500px;
+            box-shadow: 0px 5px 25px 5px rgb(186, 185, 185);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            background: #fff;
+            transition: 0.2s all ease;
+            
+        }
+        .container:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 25px 5px rgb(71, 166, 244);
+        }
+
+        #select {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 30px;
+            border-radius: 8px 8px 0px 0px;
+            border: none;
+            background: rgb(81, 182, 236);
+            color: #fff;
+            transition: 0.2s all ease;
+
+        }
+
+        #select:hover {
+            background: rgb(95, 95, 238);
+            height: 45px;
+        }
+
+        .info {
+            position: relative;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .infoId {
+            position: absolute;
+            bottom: -80%;
+            left: 50%;
+            font-size: 17px;
+            transition: 0.2s all ease;
+        }
+
+        .infoId:hover {
+            font-size: 21px;
+            color: blueviolet;
+        }
+
+        
+    </style>
+
+
+</body>
+</html>
