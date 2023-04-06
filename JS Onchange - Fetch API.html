@@ -5,6 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Onchange - Fetch API</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+       *{
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+
+       html {
+           display: flex;
+           place-content: center;
+           font-family: 'Poppins', sans-serif;
+           background-color: black;
+       }
+
+       .container {
+           position: relative;
+           top: 30px;
+           width: 350px;
+           height: 500px;
+           box-shadow: 0px 5px 25px 5px rgb(186, 185, 185);
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           border-radius: 8px;
+           background: #fff;
+           transition: 0.2s all ease;
+           
+       }
+       .container:hover {
+           transform: scale(1.05);
+           box-shadow: 0px 5px 25px 5px rgb(71, 166, 244);
+       }
+
+       #select {
+           position: absolute;
+           top: 0px;
+           left: 0px;
+           width: 100%;
+           height: 30px;
+           border-radius: 8px 8px 0px 0px;
+           border: none;
+           background: rgb(81, 182, 236);
+           color: #fff;
+           transition: 0.2s all ease;
+
+       }
+
+       #select:hover {
+           background: rgb(95, 95, 238);
+           height: 45px;
+       }
+
+       .info {
+           position: relative;
+           padding: 20px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+       }
+
+       .infoId {
+           position: absolute;
+           bottom: -80%;
+           left: 50%;
+           font-size: 17px;
+           transition: 0.2s all ease;
+       }
+
+       .infoId:hover {
+           font-size: 21px;
+           color: blueviolet;
+       }
+
+       
+   </style>
+
 </head>
 <body>
     <div class="container">
@@ -93,82 +171,6 @@
 
     </script>
 
-    <style>
-         @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            display: flex;
-            place-content: center;
-            font-family: 'Poppins', sans-serif;
-            background-color: black;
-        }
-
-        .container {
-            position: relative;
-            top: 30px;
-            width: 350px;
-            height: 500px;
-            box-shadow: 0px 5px 25px 5px rgb(186, 185, 185);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 8px;
-            background: #fff;
-            transition: 0.2s all ease;
-            
-        }
-        .container:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 5px 25px 5px rgb(71, 166, 244);
-        }
-
-        #select {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            height: 30px;
-            border-radius: 8px 8px 0px 0px;
-            border: none;
-            background: rgb(81, 182, 236);
-            color: #fff;
-            transition: 0.2s all ease;
-
-        }
-
-        #select:hover {
-            background: rgb(95, 95, 238);
-            height: 45px;
-        }
-
-        .info {
-            position: relative;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .infoId {
-            position: absolute;
-            bottom: -80%;
-            left: 50%;
-            font-size: 17px;
-            transition: 0.2s all ease;
-        }
-
-        .infoId:hover {
-            font-size: 21px;
-            color: blueviolet;
-        }
-
-        
-    </style>
 
 
 </body>
