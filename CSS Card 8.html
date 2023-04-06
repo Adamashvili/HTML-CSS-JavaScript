@@ -5,6 +5,73 @@
 <meta http-equiv="X-UA Compatible" content="IE=edge">
 <meta name="viewport" content="widht=device-widht, initial-scale=1.0">
 <title>Animated Cards</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+   
+    *{
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: 'Poppins', sans-serif;
+    }
+   
+    body {
+       background-color: #2d3548;
+       color: #fff;
+    }
+   
+   .container {
+      
+       display: flex;
+       width: 90%;
+       min-height: 100vh;
+       justify-content: center;
+       align-items: center;
+       margin: 0 auto;
+       gap: 20px;
+       flex-wrap: wrap;
+   }
+   
+    
+   .card-bg{
+       width: 300px;
+       height: 500px;
+       border-radius: 15px;
+       background-repeat: center;
+       background-size: cover;
+       position: relative;
+   }
+   
+   .content{
+       position: absolute;
+       left: 0;
+       padding: 25px;
+       
+   }
+   .card-categories{
+       font-size: 0.8rem;
+       margin-bottom: 10px;
+       text-transform: uppercase;
+   }
+   
+   .card-heading{
+       font-size: 22px;
+       text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+   }
+   
+   .card:hover{
+       transform: scale(1.1);
+       cursor: pointer;
+       transition: all 0.2s ease;
+   }
+   
+   .container:hover >.card:not(:hover) .card-bg{
+       filter: brightness(0.5) blur(10px);
+   }
+   
+   
+   </style>
 </head>
 <body>
 <div class="container">
@@ -50,69 +117,3 @@
 
 
 
-<style>
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
- *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
- }
-
- body {
-    background-color: #2d3548;
-    color: #fff;
- }
-
-.container {
-   
-    display: flex;
-    width: 90%;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
- 
-.card-bg{
-    width: 300px;
-    height: 500px;
-    border-radius: 15px;
-    background-repeat: center;
-    background-size: cover;
-    position: relative;
-}
-
-.content{
-    position: absolute;
-    left: 0;
-    padding: 25px;
-    
-}
-.card-categories{
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.card-heading{
-    font-size: 22px;
-    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-}
-
-.card:hover{
-    transform: scale(1.1);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.container:hover >.card:not(:hover) .card-bg{
-    filter: brightness(0.5) blur(10px);
-}
-
-
-</style>
