@@ -4,6 +4,97 @@
 <meta charset="utf-8">
 <meta name="viewport" content="widht=device-widht, initial-scale=1.0">
 <title>Animated Cards</title>
+
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+        align-items: center;
+        background: rgb(106, 103, 103);
+    }
+
+    .container {
+        display: flex;
+        width: 100%;
+        position: relative;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4rem
+        ;
+    }
+
+    .card {
+        height: 500px;
+        margin: 50px;
+        box-shadow: 5px 5px 20px black;
+        overflow: hidden;
+    }
+
+    img {
+        height: 500px;
+        width: 350px;
+        border-radius: 3px;
+        transition: .5s;
+
+        
+    }
+
+    .intro {
+        height: 70px;
+        width: 350px;
+        padding: 6px;
+        box-sizing: border-box;
+        position: relative;
+        background: rgb(27, 27, 27, 0.5);
+        color: white;
+        bottom: 75px;
+        transition: .5s;
+    }
+
+    h1 {
+        margin: 10px;
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 15px;
+        margin: 20px;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    span {
+        font-weight: bold;
+    }
+
+    .card:hover {
+        cursor: pointer;
+       
+    }
+
+    .card:hover .intro {
+        height: 220px;
+        bottom: 14rem;
+        background: black;
+        opacity: 0.8;
+    }
+
+    .card:hover p{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .card:hover img {
+        transform: scale(1.1) rotate(-3deg);
+    }
+ </style>
 </head>
 <body>
      <div class="container">
@@ -34,94 +125,5 @@
     </body>
     </html>
 
-    <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-            font-family: sans-serif;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            align-items: center;
-            background: rgb(106, 103, 103);
-        }
-
-        .container {
-            display: flex;
-            width: 100%;
-            position: relative;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 4rem
-            ;
-        }
-
-        .card {
-            height: 500px;
-            margin: 50px;
-            box-shadow: 5px 5px 20px black;
-            overflow: hidden;
-        }
-
-        img {
-            height: 500px;
-            width: 350px;
-            border-radius: 3px;
-            transition: .5s;
-
-            
-        }
-
-        .intro {
-            height: 70px;
-            width: 350px;
-            padding: 6px;
-            box-sizing: border-box;
-            position: relative;
-            background: rgb(27, 27, 27, 0.5);
-            color: white;
-            bottom: 75px;
-            transition: .5s;
-        }
-
-        h1 {
-            margin: 10px;
-            font-size: 30px;
-        }
-
-        p {
-            font-size: 15px;
-            margin: 20px;
-            visibility: hidden;
-            opacity: 0;
-        }
-
-        span {
-            font-weight: bold;
-        }
-
-        .card:hover {
-            cursor: pointer;
-           
-        }
-
-        .card:hover .intro {
-            height: 220px;
-            bottom: 14rem;
-            background: black;
-            opacity: 0.8;
-        }
-
-        .card:hover p{
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .card:hover img {
-            transform: scale(1.1) rotate(-3deg);
-        }
-     </style>
+    
 
