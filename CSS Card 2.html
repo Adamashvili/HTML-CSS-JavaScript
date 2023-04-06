@@ -3,7 +3,117 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="widht=device-widht, initial-scale=1.0">
+<style>
+
+    *{
+        margin: 0 ;
+        padding: 0 auto;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: rgba(214, 207, 207, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6rem;
+    }
+
+    .grid {
+        width: 350px;
+        height: 470px;
+        box-shadow: 0 5px 30px 5px;
+        position: relative;
+        background-color: white;
+        border-radius: 9px;
+        
+    }
+    .grid:hover {
+        transform: translateY(-1%);
+        transition: all ease 0.3s;
+        box-shadow: 0 5px 30px 6px rgb(65, 56, 21);}
+
+    .suratis-adgili {
+        width: 350px;
+        height: 200px;
+        border: 1px solid;
+    }
+
+    .marti {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 60px;
+        height: 60px;
+        border: 1px solid black;
+        border-radius: 50%;
+        text-align: center;
+        background-color: rgb(255, 208, 80);
+        color: white;
+        font-family: cursive;
+    }
+
+    .gafartoeba {
+        text-align: center;
+        position: relative;
+        top: 5rem;
+        
+        font-size: 30px;
+        color: white;
+        font-family: cursive;
+
+    }
+
+    .photo {
+        position: relative;
+        top: 127.7px;
+        height: 30px;
+        width: 57px;
+        left:-2px;
+        border: 1px solid black;
+        text-align: center;
+        background-color: rgb(255, 208, 80);
+        color: white;
+        font-family:cursive;
+        
+    }
+
+    .grid-item {
+        background-color: rgba(0, 0, 0, 0.707);
+    }
+    .witelisatauri {
+        color: red
+    }
+
+    .clickformore {
+        position: absolute;
+        bottom: -35px;
+        width: 150px;
+        height: 30px;
+        border: white;
+        background-color: rgb(255, 208, 80);
+        color:white;
+        border-radius: 4px;
+        font-family: cursive;
+        
+    }
+
+    .clickformore:hover {
+        background-color: rgba(48, 50, 7, 0.6);
+        width: 155px;
+        height: 30px;
+        transition: all ease 0.3s;
+    }
+
+   .card {
+    position: absolute;
+    padding: 6px;
+    font-family: cursive;
+    font-size: 14px;
+    bottom: 42px;
+   }
+</style>
 </head>
+
 <body>
     <div class="grid">
         <div class="grid-item">
@@ -24,112 +134,4 @@
     </body>
     </html>
 
-    <style>
-
-        *{
-            margin: 0 ;
-            padding: 0 auto;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: rgba(214, 207, 207, 0.5);
-            display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 6rem;
-        }
-
-        .grid {
-            width: 350px;
-            height: 470px;
-            box-shadow: 0 5px 30px 5px;
-            position: relative;
-           background-color: white;
-           border-radius: 9px;
-            
-        }
-        .grid:hover {
-            transform: translateY(-1%);
-                    transition: all ease 0.3s;
-                    box-shadow: 0 5px 30px 6px rgb(65, 56, 21);}
-
-        .suratis-adgili {
-            width: 350px;
-            height: 200px;
-            border: 1px solid;
-        }
-
-        .marti {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 60px;
-            height: 60px;
-            border: 1px solid black;
-            border-radius: 50%;
-            text-align: center;
-            background-color: rgb(255, 208, 80);
-            color: white;
-            font-family: cursive;
-        }
-
-        .gafartoeba {
-            text-align: center;
-            position: relative;
-            top: 5rem;
-            
-            font-size: 30px;
-            color: white;
-            font-family: cursive;
-
-        }
-
-        .photo {
-            position: relative;
-            top: 127.7px;
-            height: 30px;
-            width: 57px;
-            left:-2px;
-            border: 1px solid black;
-            text-align: center;
-            background-color: rgb(255, 208, 80);
-            color: white;
-            font-family:cursive;
-            
-        }
-
-        .grid-item {
-            background-color: rgba(0, 0, 0, 0.707);
-        }
-        .witelisatauri {
-            color: red
-        }
-
-        .clickformore {
-            position: absolute;
-            bottom: -35px;
-            width: 150px;
-            height: 30px;
-            border: white;
-            background-color: rgb(255, 208, 80);
-            color:white;
-            border-radius: 4px;
-            font-family: cursive;
-            
-        }
-
-        .clickformore:hover {
-            background-color: rgba(48, 50, 7, 0.6);
-            width: 155px;
-            height: 30px;
-            transition: all ease 0.3s;
-        }
-
-       .card {
-        position: absolute;
-        padding: 6px;
-        font-family: cursive;
-        font-size: 14px;
-        bottom: 42px;
-       }
-    </style>
+    
