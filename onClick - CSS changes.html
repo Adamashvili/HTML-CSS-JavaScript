@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Gender</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+    
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+        }
+    
+        .archeva {
+            display: grid;
+            margin: 20px;
+            
+        }
+    
+    
+       .erti, .ori, .sami {
+        margin: 10px;
+       }
+    
+       .text {
+    
+        background: rgb(145, 187, 246);
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid rgb(197, 197, 237);
+        visibility: visible;
+        
+       }
+    
+       .hidden1 {
+        visibility: hidden;
+       }
+    
+       .active {
+        visibility: visible;
+       }
+    
+    
+    .arch2 {
+        position: relative;
+        right: 30px;
+        top: -50px;
+        display: flex;
+        margin: 30px;
+        gap: 10px;
+        height: 0px;
+        justify-content: center;
+        align-items: center;
+        visibility: visible;
+        
+    }
+    .hidden2 {
+        visibility: hidden;
+    }
+    
+    .xazi {
+        position: relative;
+        top: -40px;
+        width: 100%;
+        height: 2px;
+        border-bottom: 2px solid rgb(197, 197, 199) ;
+        
+    }
+    
+    .submit {
+        position: relative;
+        top: -50px;
+        display: flex;
+        margin: 20px;
+        width: 100px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        border: 1px solid rgb(164, 224, 248);
+        background: rgb(102, 102, 251);
+        color: white;
+        font-weight: bold;
+        letter-spacing: 1px;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: 0.2s all ease;
+    }
+    
+    .submit:hover {
+        opacity: 1;
+    }
+      
+    
+        
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <p>Choose your Gender</p>
+    <form class="archeva active hidden" id="archeva1">
+        
+        <div class="erti" >
+        <input onclick="pirveli()" id="male" type="radio" name="option" value="male"> Male
+        
+        
+    </div>
+
+       
+      <div class="ori" >
+        <input onclick="meore()" id="female" type="radio" name="option" value="female"> Female
+        
+        
+
+    </div>
+
+    <div class="sami active hidden" >
+        <input onclick="mesame()" id="other" type="radio" name="option" value="other"> Other
+       
+        
+    </div>
+
+    </form>
+
+    <p id="teext" class="text hidden1">This Alert is attached to 'Male' and 'Female' options.</p>
+
+    <form id="archeva2" class="arch2 hidden2">
+    <label for="others">Type your Gender:</label>
+    <input type="text">
+</form>
+<div class="xazi"></div>
+
+<input type="submit" class="submit">
+</div>
+<script>
+    var archeva = document.getElementById("archeva1")
+    var erti = document.getElementById("male")
+    var ori = document.getElementById("female")
+    var sami = document.getElementById("other")
+    var texxt = document.getElementById("teext")
+    var arccc = document.getElementById("archeva2")
+
+function pirveli () {
+    if (erti.checked) {
+        texxt.style.visibility = "visible";
+        arccc.style.visibility = "hidden";
+    }
+}
+
+function meore () {
+    if (ori.checked) {
+        texxt.style.visibility = "visible";
+        arccc.style.visibility = "hidden";
+    }
+}
+
+function mesame () {
+    if (sami.checked) {
+        arccc.style.visibility = "visible";
+        texxt.style.visibility = "hidden"
+    }
+}
+
+
+
+</script>
+</body>
+
+</html>
