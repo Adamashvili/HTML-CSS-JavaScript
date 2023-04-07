@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: black;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        
+            margin: 15px
+        }
+
+        #img {
+            object-fit: cover;
+            width: 95vw;
+            height: 95vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 16px 5px rgb(168, 161, 161);
+        }
+
+
+        .btn {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            
+            
+        }
+
+        .btn-left {
+            position: absolute;
+            left: 25px;
+            width: 30px;
+            height: 30px;
+            background: black;
+            color: white;
+            border: 1px solid white;
+            cursor: pointer;
+        }
+
+        .btn-right {
+            position: absolute;
+            right: 25px;
+            width: 30px;
+            height: 30px;
+            background: black;
+            color: white;
+            border: 1px solid white;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+    <img src="photo2.jpg" id="img">
+    <button class="btn-left" onclick="back()">&#10094;</button>
+        <button class="btn-right" onclick="next()">&#10095;</button>
+
+    </div>
+
+        <script>
+            
+            var img = document.getElementById("img");
+            var i = 1;
+            var array = ["photo1.jpg", "photo2.jpg", "photo3.jpg","photo4.jpg","photo5.jpg","photo6.jpg",]
+            function next () {
+                img.setAttribute("src", array[i])
+                i++;
+                if(i > 5) {i = 0}
+            }
+
+            function back () {
+                img.setAttribute("src", array[i])
+                i--;
+                if(i < 0) {i = 5}
+               
+            }
+        </script>
+
+        
+</body>
+</html>
