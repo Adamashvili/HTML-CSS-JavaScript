@@ -4,7 +4,104 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo List</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+       *{
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           font-family: 'Quicksand', sans-serif;
+   
+       }
+       body {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background: grey;
+       }
+   
+       .main {
+           position: relative;
+           width: 500px;
+           height: 500px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           box-shadow: 5px 5px 25px 5px  black;
+           margin: 100px;
+           border-radius: 10px;
+           background: white;
+       }
+   
+       .main input {
+           position: absolute;
+           width: 95%;
+           height: 35px;
+           top: 20px;
+           border-radius: 10px;
+           border: 1px solid grey;
+           padding: 10px;
+   
+       }
+   
+       .addtext {
+           position: absolute;
+           top: 20px;
+           width: 80px;
+           height: 35px;
+           right: 10px;
+           border-radius: 0px 10px 10px 0px;
+           border: 1px solid grey;
+           background: rgb(188, 188, 240);
+           transition: 0.2s all ease-out;
+           cursor: pointer;
+       }
+       .addtext:hover {
+           background: rgb(102, 102, 231);
+       }
+   
+       .item {
+           position: relative;
+           border-radius: 10px;
+           width: 470px;
+           margin: 10px;
+           height: 35px;
+           padding: 15px;
+           display: flex; 
+           align-items: center;
+           background: rgb(188, 188, 240);
+           cursor: pointer;
+           box-shadow: 0px 0px 5px 1px lightblue;
+           transition: 0.2s all ease;
+           
+       }
+       .item:hover {
+           height: 42px;
+           background-color: blueviolet;
+           color: white;
+           box-shadow: 0px 0px 10px 3px lightblue;
+       }
+   
+       .item span {
+           position: absolute;
+           right: 0px;
+           border-radius: 10px;
+           width: 35px;
+           height: 35px;
+           background-color: rgb(54, 53, 53);
+           color: white;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           cursor: pointer
+           ;
+       }
+   
+   </style>
+   
+
 </head>
 <body>
     <div class="main">
@@ -87,100 +184,6 @@
     </script>
 </body>
 
-<style>
-     @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Quicksand', sans-serif;
-
-    }
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: grey;
-    }
-
-    .main {
-        position: relative;
-        width: 500px;
-        height: 500px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 5px 5px 25px 5px  black;
-        margin: 100px;
-        border-radius: 10px;
-        background: white;
-    }
-
-    .main input {
-        position: absolute;
-        width: 95%;
-        height: 35px;
-        top: 20px;
-        border-radius: 10px;
-        border: 1px solid grey;
-        padding: 10px;
-
-    }
-
-    .addtext {
-        position: absolute;
-        top: 20px;
-        width: 80px;
-        height: 35px;
-        right: 10px;
-        border-radius: 0px 10px 10px 0px;
-        border: 1px solid grey;
-        background: rgb(188, 188, 240);
-        transition: 0.2s all ease-out;
-        cursor: pointer;
-    }
-    .addtext:hover {
-        background: rgb(102, 102, 231);
-    }
-
-    .item {
-        position: relative;
-        border-radius: 10px;
-        width: 470px;
-        margin: 10px;
-        height: 35px;
-        padding: 15px;
-        display: flex; 
-        align-items: center;
-        background: rgb(188, 188, 240);
-        cursor: pointer;
-        box-shadow: 0px 0px 5px 1px lightblue;
-        transition: 0.2s all ease;
-        
-    }
-    .item:hover {
-        height: 42px;
-        background-color: blueviolet;
-        color: white;
-        box-shadow: 0px 0px 10px 3px lightblue;
-    }
-
-    .item span {
-        position: absolute;
-        right: 0px;
-        border-radius: 10px;
-        width: 35px;
-        height: 35px;
-        background-color: rgb(54, 53, 53);
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer
-        ;
-    }
-
-</style>
 
 
 </html>
