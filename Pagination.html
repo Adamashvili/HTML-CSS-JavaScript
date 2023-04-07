@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+       *{
+           box-sizing: border-box;
+           font-family: "poppins";
+           font-size: 13px;
+           
+       }
+   
+       body {
+           background: rgb(227, 225, 227);
+       }
+        .list {
+           width:80%;
+           height: 450px;
+           max-height: 700px;
+           padding: 23px;
+           box-shadow: 0px 0px 20px 5px rgb(255, 255, 255);
+           border-radius: 8px;
+           margin: 100px auto;
+           overflow: auto;
+           margin-bottom: 0px;
+           background: white;
+       }
+   
+       .lists {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           padding: 10px;
+           gap: 12px;
+           cursor: pointer;
+           margin-top: 10px;
+           background: rgb(187, 189, 233);
+           height: 30px;
+           box-sizing: border-box;
+           border-radius: 4px;
+           box-shadow: 0px 0px 5px 1px lightblue;
+           transition: 0.2s all ease;
+   
+       }
+       .lists:hover {
+           background: rgb(179, 94, 229);
+           height: 45px;
+           text-transform: capitalize;
+           color: white;
+           font-weight: 600;
+   
+       }
+   
+       .listId {
+           flex-grow: 1;
+           
+       }
+   
+       .listDesc {
+           flex-grow: 4;
+       }
+   
+       .pagination {
+           width:80%;
+           height: 20px;
+           max-height: 700px;
+           padding: 23px;
+           margin: 0px auto;
+           display: flex;
+           justify-content: center;
+           gap: 12px;
+       }
+   
+       .page {
+           background: rgb(187, 189, 233);
+           text-align: center;
+           padding: 8px;
+           cursor: pointer;
+           width:40px;
+           height: 40px;
+           border-radius: 8px;
+           font-size: 17px;
+       }
+   
+       .page:hover{
+           background: rgb(179, 94, 229);
+           box-shadow: 0px 0px 20px 2px white;
+           
+       }
+   </style>
+
+</head>
+<body>
+    <div class="list"></div>
+    <div class="pagination"></div>
+
+<script>
+        var list = document.querySelector(".list");
+        var pagination = document.querySelector(".pagination");
+        var responseData = [];
+        var pageCount = 22;
+
+        function createLists(txt1, txt2) {
+            var elem = document.createElement("div");
+            elem.classList.add("lists");
+            var x = createElementListId(txt1);
+            var y = createElementListDesc(txt2);
+            elem.appendChild(x);
+            elem.appendChild(y);
+            return elem;
+        }
+
+
+    function createElementListId(txt) {
+        var elem = document.createElement("div");
+        var text = document.createTextNode(txt);
+        elem.innerHTML = text.nodeValue;
+        elem.classList.add("listId");
+        return elem;
+    
+    }
+
+    function createElementListDesc(txt) {
+        var elem = document.createElement("div");
+        var text = document.createTextNode(txt);
+        elem.innerHTML = text.nodeValue;
+        elem.classList.add("listDesc");
+        return elem;
+    }
+    var responseData = "";
+    async function getPosts() {
+        var data = await fetch("https://jsonplaceholder.typicode.com/posts");
+        return data.json();
+    }
+
+
+    function setData() {
+        getPosts().then((data) => {
+            aaddPages(Math.ceil(data.length) / pageCount);
+            responseData = data;
+            drawData(0, data, pageCount);
+        })
+      
+    }
+
+    function drawData(slData, data, pageCount) {
+        list.innerHTML = "";
+        var prevData = slData === 0 ? 0 : Number(slData) * Number(pageCount);
+      var nextData = slData === 0 ? Number(pageCount) : Number(slData) * Number(pageCount) + Number(pageCount);
+        var sliceData = data.slice(prevData, nextData);
+            sliceData.forEach((item) => {
+                list.appendChild(createLists(item.id, item.title))
+            })
+    }
+
+    function aaddPages(count) {
+        for(var x = 1; x < count + 1; x ++) {
+        var elem = document.createElement("div");
+        var text = document.createTextNode(x);
+        elem.classList.add("page");
+        elem.innerHTML = text.nodeValue;
+        elem.onclick = (id) => getPageData(id);
+        pagination.appendChild(elem)
+        }
+   
+    }
+
+    function getPageData(x) {
+        [...pagination.children].forEach((item) => {
+            item.style.backgroundColor = "rgb(187, 189, 233)"
+        })
+        x.target.style.backgroundColor = "rgb(179, 94, 229)";
+        drawData(Number(x.target.innerHTML) - 1, responseData, pageCount)
+    }
+
+
+
+    setData();
+    
+</script>
+</body>
+
+
+</html>
