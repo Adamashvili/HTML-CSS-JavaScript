@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+       *{
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           font-family: 'Poppins';
+           
+       }
+
+       html {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background-image: url("https://cdn.pixabay.com/photo/2022/10/03/21/47/fog-7496901_960_720.jpg");
+           object-fit: cover;
+           background-size:cover;
+           overflow-y: hidden;
+           
+       }
+
+       .registration {
+           position: relative;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           bottom: 250px;
+           width: 700px;
+           height: 550px;
+           box-shadow: 5px 5px 25px 5px black;
+           border-radius: 10px;
+           z-index: 1;
+           backdrop-filter: blur(10px)  ;
+         
+           
+       }
+
+       .submit {
+           position: relative;
+           width: 86%;
+           height: 40px;
+           margin: 0 auto;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           background: rgb(255, 0, 0);
+           border-radius: 10px;
+           font-size: 18px;
+           color: white;
+           border:none;
+           cursor: pointer;
+           font-weight: bold;
+           opacity: 0.6;
+           bottom: -40px;
+       }
+
+       .submit:hover {
+           opacity: 1;
+       }
+
+       .haveaccount {
+           position: absolute;
+           bottom: -95px;
+           left: 180px;
+           font-weight: bold;
+           cursor: pointer;
+       }
+
+       .haveaccount:hover {
+           color: red;
+       }
+
+       .headerreg {
+           position: absolute;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           top: 190px;
+           left: -220px;
+           font-weight:bold ;
+           font-size: 45px;
+           letter-spacing: 1px;
+           color: red;
+          
+       }
+       .registration-items {
+           position: absolute;
+           top: -30px;
+           right: 70px;
+           display: flex;
+           flex-direction: column;
+           padding: 40px;
+           margin: 0 auto;
+           justify-content: center;
+         
+           
+       }
+
+       .inputs {
+           position: relative;
+           left: 30px;
+           top: 40px;
+
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           
+           display: flex;
+           margin: 0 auto;
+       }
+
+       .usedmail {
+           position: absolute;
+           top: 40px;
+           font-size: 12px;
+           color: red;
+           font-weight: bold;
+           visibility: hidden;
+       }
+       .inputboxs {
+           position: relative;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           margin: 35px auto;
+           width: 250px;
+           
+           
+       }
+
+       .inputboxs input {
+           position: relative;
+           height: 35px;
+          width: 90%;
+          display: flex;
+          margin: 0 auto;
+          border-radius: 5px;
+          border: 1px solid black;
+          padding: 10px;
+       }
+
+       .modal {
+           position: relative;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           width: 400px;
+           height: 300px;
+           box-shadow: 5px 5px 25px 5px rgb(8, 8, 8);
+           top: 150px;
+           left: 150px;
+           border-radius: 10px;
+           z-index: 5;
+           background-color: rgb(0, 0, 0);
+           border: 1px solid white;
+           
+           
+
+           
+           
+       }
+
+       .close {
+           position: absolute;
+           top: -1px;
+           right: -1px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           cursor: pointer;
+           background: rgb(167, 160, 160);
+           width: 40px;
+           height: 25px;
+           border-radius: 0px 8px;
+           transition: 0.2s all ease;
+           
+           
+           
+           
+       }
+       .welcome {
+           font-size: 15px;
+           padding: 20px;
+           color: white;
+       }
+
+      .close:hover {
+           background-color: white;
+      }
+   </style>
+
+
+</head>
+<body>
+    <div class="modal">
+        <div class="header">
+            <h1 class="welcome">“Fear of what other people will think is the single most paralyzing dynamic in business and in life. The best moment of my life was the day I realized that I no longer give a damn what anybody thinks. That’s enormously liberating and freeing, and it’s the only way to live your life and do your business” — Cindy Gallop</h1>
+            <span class="close" onclick="closeModal()">X</span>
+        </div>
+    </div>
+
+    <div class="registration">
+        <div class="registration-items">
+        <p class="headerreg">Create an <br> Account</p>
+        <div class="inputs">
+            <form onsubmit="addStorage()">
+            <div class="inputboxs">
+        <input type="text" id="firstname" placeholder="First Name">
+    </div>
+    <div class="inputboxs">
+        <input type="text" id="lastname" placeholder="Last Name">
+    </div>
+    <div class="inputboxs">
+        <input type="email" id="email" placeholder="Email" >
+        <p class="usedmail">This Email is already used!</p>
+    </div>
+    <div class="inputboxs">
+        <input type="password" id="password" placeholder="Password">
+    </div>
+    <button type="submit" class="submit">Sign Up</button>
+</form>
+
+    
+    </div>
+
+    <div class="links">
+        <div class="haveaccount">
+            <p>Have an Account?</p>
+        </div>
+
+        
+    </div>
+    </div>
+    </div>
+
+    <script>
+    
+        var modal = document.querySelector(".modal");
+
+        function addStorage ()  {
+        var registration = document.querySelector(".registration");
+        var firstName = document.getElementById("firstname");
+        var lastName = document.getElementById("lastname");
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        var usedMail = document.querySelector(".usedmail");
+
+        if (checkUser()) {
+            usedMail.style.visibility = "visible";
+            alert("This email is already Used");
+
+
+        }
+        else {
+            localStorage.setItem ("userData", JSON.stringify({
+            firstName: firstName.value,
+            lastName: lastName.value,
+            email: email.value,
+            password: password.value
+
+
+        }))
+
+        }
+
+      
+        
+
+        }
+
+        function checkUser () {
+            if (email.value === JSON.parse(localStorage.getItem("userData")).email) {
+                return true
+
+            }  else {
+                return false
+            }
+
+        }
+
+
+       
+
+
+
+        
+
+        document.onclick = function(event) {
+            if(!modal.contains(event.target)) {
+                modal.style.visibility = "hidden"
+            }
+        }
+       
+
+      function  closeModal() {
+        modal.style.visibility = "hidden";
+        }
+
+
+        
+
+        
+       
+        
+    </script>
+
+    
+   
+</body>
+</html>
