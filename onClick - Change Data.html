@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+
+
+       body {
+           display: flex;
+          justify-content: center;
+          align-items: center;
+          background: grey;
+
+       }
+
+       .container {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           width: 350px;
+           height: 550px;
+           box-shadow: 5px 5px 15px 5px black;
+           margin: 50px;
+           font-family: 'Poppins';
+           font-size: 20px;
+           font-weight: bold;
+           background: #fff;
+           border-radius: 8px;
+           transition: 0.5s all ease;
+           
+       }
+
+       .container:hover {
+           transform: scale(1.1);
+       }
+
+       .ppp {
+           margin: 15px;
+           transition: 0.4s all ease;
+           display: flex;
+           justify-content: center;
+          letter-spacing: 2px;
+          cursor: pointer;
+           
+          
+       }
+
+       .ppp:hover {
+          
+           color: white;
+           font-size: 36px;
+           font-weight: bold;
+           background: blueviolet ;
+           box-shadow: 5px 5px 15px rgb(105, 7, 141);
+           border-radius: 20px;
+           width: 320px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           text-transform: uppercase;
+           
+       }
+   </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="container-item">
+    <p id="erti" class="ppp" onclick="erti()">Name</p>
+    <p id="ori"  class="ppp" onclick="ori()">Surname</p>
+    <p id="sami"  class="ppp" onclick="sami()">Age</p>
+    <p id="otxi" class="ppp" onclick="otxi()">Date of Birth</p>
+    <p id="xuti" class="ppp"onclick="xuti()">City</p>
+    <p id="eqvsi" class="ppp" onclick="eqvsi()">Country</p>
+    <p id="shvidi" class="ppp" onclick="shvidi()">Education</p>
+    <p id="rva" class="ppp" onclick="rva()">Experience</p>
+    <p id="cxra"  class="ppp" onclick="cxra()">Hobby</p>
+    <p id="ati" class="ppp" onclick="ati()">Skills</p>
+</div>
+</div>
+
+    <script>
+        function erti() {
+            var erti = "Irakli"
+            document.getElementById("erti").innerHTML = erti;
+        }
+
+        function ori() {
+            var ori = "Adamashvili"
+            document.getElementById("ori").innerHTML = ori;
+        }
+
+        function sami() {
+            var sami = "24"
+            document.getElementById("sami").innerHTML = sami;
+        }
+
+        function otxi() {
+            var otxi = "12-Sep-1998"
+            document.getElementById("otxi").innerHTML = otxi;
+        }
+        function xuti() {
+            var xuti = "Tbilisi"
+            document.getElementById("xuti").innerHTML = xuti;
+        }
+        function eqvsi() {
+            var eqvsi = "Georgia"
+            document.getElementById("eqvsi").innerHTML = eqvsi;
+        }
+
+        function shvidi() {
+            var shvidi = "IT Academy STEP"
+            document.getElementById("shvidi").innerHTML = shvidi;
+        }
+
+        function rva() {
+            var rva = "A lot of Experience"
+            document.getElementById("rva").innerHTML = rva;
+        }
+
+        function cxra() {
+            var cxra = "Driving a Car"
+            document.getElementById("cxra").innerHTML = cxra;
+        }
+
+
+        function ati() {
+            
+            var ati = "Genius"
+           
+            document.getElementById("ati").innerHTML = ati;
+            
+        }
+    </script>
+
+    
+</body>
+</html>
